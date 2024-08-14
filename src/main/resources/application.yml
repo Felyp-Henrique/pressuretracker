@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: "Pressure Tracker"
+  datasource:
+    host: "${TRACKER_DATABASE_HOST:localhost}"
+    port: "${TRACKER_DATABASE_PORT:3306}"
+    database: "${TRACKER_DATABASE_DATABASE:tracker}"
+    username: "${TRACKER_DATABASE_USERNAME:root}"
+    password: "${TRACKER_DATABASE_PASSWORD:toor}"
+  security:
+    user:
+      name: "${TRACKER_SECURITY_ADMIN_USERNAME:admin}"
+      password: "${TRACKER_SECURITY_ADMIN_PASSWORD:admin}"
+      roles: "${TRACKER_SECURITY_ADMIN_ROLES:admin}"
