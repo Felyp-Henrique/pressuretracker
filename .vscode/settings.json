@@ -2,5 +2,12 @@
     "files.trimTrailingWhitespace": true,
     "files.autoSave": "afterDelay",
     "java.configuration.updateBuildConfiguration": "interactive",
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-22",
+            "path": "/opt/jdk-22.0.1",
+            "default": true
+        }
+    ]
 }

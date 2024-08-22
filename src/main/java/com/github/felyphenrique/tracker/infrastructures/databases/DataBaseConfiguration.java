@@ -1,13 +1,11 @@
 package com.github.felyphenrique.tracker.infrastructures.databases;
 
-import org.mariadb.r2dbc.MariadbConnectionConfiguration;
-import org.mariadb.r2dbc.MariadbConnectionFactory;
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.r2dbc.core.DatabaseClient;
-
-import io.r2dbc.spi.ConnectionFactory;
 
 @Configuration()
 public class DataBaseConfiguration {
@@ -28,21 +26,12 @@ public class DataBaseConfiguration {
     private String dataSourcePassword;
 
     @Bean()
-    public ConnectionFactory trackerConnectionFactory() {
-        return new MariadbConnectionFactory(
-                MariadbConnectionConfiguration.builder()
-                        .host(dataSourceHost)
-                        .port(dataSourcePort)
-                        .database(dataSourceDataBase)
-                        .username(dataSourceUsername)
-                        .password(dataSourcePassword)
-                        .build());
-    }
-
-    @Bean()
-    public DatabaseClient trackerDatabaseClient(ConnectionFactory factory) {
-        return DatabaseClient.builder()
-                .connectionFactory(factory)
+    public DataSource dataSource() {
+        return DataSourceBuilder.create()
+                .driverClassName("com.mysql.cj.jdbc.Driver")
+                .url("jdbc:mysql://%s:%d/%s".formatted(dataSourceHost, dataSourcePort, dataSourceDataBase))
+                .username(dataSourceUsername)
+                .password(dataSourcePassword)
                 .build();
     }
 }

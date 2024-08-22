@@ -1,25 +1,30 @@
 package com.github.felyphenrique.tracker.application.integrations.entities;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity()
 @Table(name = "integrations")
-public final class Integration {
+public class Integration {
     public static final int INTEGRATION_STATUS_INACTIVE = 0;
     public static final int INTEGRATION_STATUS_ACTIVE = 1;
 
     @Id()
-    @Column(value = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
-    @Column(value = "description")
+    @Column(name = "description")
     private String description;
 
-    @Column(value = "token")
+    @Column(name = "token")
     private String token;
 
-    @Column(value = "status")
+    @Column(name = "status")
     private int status;
 
     public Integration() {
