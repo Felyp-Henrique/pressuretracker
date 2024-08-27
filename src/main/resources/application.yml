@@ -9,6 +9,13 @@ spring:
     database: "${TRACKER_DATABASE_DATABASE:tracker}"
     username: "${TRACKER_DATABASE_USERNAME:root}"
     password: "${TRACKER_DATABASE_PASSWORD:toor}"
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: "update"
+    properties:
+      hibernate:
+        format_sql: true
   security:
     user:
       name: "${TRACKER_SECURITY_ADMIN_USERNAME:admin}"
