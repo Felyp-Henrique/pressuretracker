@@ -12,6 +12,7 @@ public class I18nConfiguration {
     public MessageSource messageSource() {
         final ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasename("i18n/messages");
+        messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
 }
