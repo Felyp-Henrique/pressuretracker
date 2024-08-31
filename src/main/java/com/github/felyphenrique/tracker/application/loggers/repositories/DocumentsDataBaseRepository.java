@@ -16,6 +16,12 @@ public interface DocumentsDataBaseRepository extends JpaRepository<Document, Str
 
     public Page<DocumentsProjection> findByStatus(@Param("status") Status status, Pageable pageable);
 
+    public Page<DocumentsProjection> findByIntegrationId(
+            @Param("integration_id") String integrationId, Pageable pageable);
+
+    public Page<DocumentsProjection> findByIntegrationIdAndStatus(
+            @Param("integration_id") String integrationId, @Param("status") Status status, Pageable pageable);
+
     @Modifying()
     @Query(value = "update document d set d.status = :status where d.id = :id", nativeQuery = true)
     public void updateDocumentSetStatusForId(@Param("id") String id, @Param("status") Status status);

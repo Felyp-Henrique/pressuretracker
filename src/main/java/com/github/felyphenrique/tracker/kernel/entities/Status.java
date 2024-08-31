@@ -31,4 +31,13 @@ public enum Status {
     public final boolean isDeleted() {
         return this.value == DELETED.value;
     }
+
+    public static final Status valueOf(final int value) {
+        for (final Status status : Status.values()) {
+            if (status.value == value) {
+                return status;
+            }
+        }
+        return INACTIVATED;
+    }
 }
