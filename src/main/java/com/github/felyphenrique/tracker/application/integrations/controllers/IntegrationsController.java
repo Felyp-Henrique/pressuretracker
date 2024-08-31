@@ -31,7 +31,7 @@ public class IntegrationsController {
             @RequestParam(name = "page", defaultValue = "0") int page,
             @RequestParam(name = "page_size", defaultValue = "10") int pageSize,
             @RequestParam(name = "order", defaultValue = "desc") String order,
-            @RequestParam(name = "order_field", defaultValue = "created_at") String orderField) {
+            @RequestParam(name = "order_field", defaultValue = "createdAt") String orderField) {
         final Sort sort = Sort.by(Direction.fromString(order), orderField);
         final Pageable pageable = PageRequest.of(page, pageSize, sort);
         final Page<Integration> response = this.service.index(pageable);
