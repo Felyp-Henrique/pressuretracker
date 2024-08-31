@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.felyphenrique.tracker.application.loggers.repositories.DocumentsRepository;
+import com.github.felyphenrique.tracker.application.loggers.repositories.DocumentsDataBaseRepository;
 import com.github.felyphenrique.tracker.application.loggers.services.DocumentsService;
 
 @RestController()
@@ -26,14 +26,14 @@ public class DocumentsController {
     }
 
     @GetMapping()
-    public @ResponseBody() ResponseEntity<Page<DocumentsRepository.DocumentsProjection>> index(
+    public @ResponseBody() ResponseEntity<Page<DocumentsDataBaseRepository.DocumentsProjection>> index(
             @RequestParam(value = "page", defaultValue = "0") int page,
             @RequestParam(value = "page_size", defaultValue = "20") int pageSize,
             @RequestParam(value = "order", defaultValue = "desc") String order,
             @RequestParam(value = "order_field", defaultValue = "createdAt") String orderField) {
-        final Sort requestSort = Sort.by(Direction.fromString(order), orderField);
-        final PageRequest requestPage = PageRequest.of(page, pageSize, requestSort);
-        final Page<DocumentsRepository.DocumentsProjection> responsePage = this.service.index(requestPage);
-        return ResponseEntity.ok(responsePage);
+        final Sort sort = Sort.by(Direction.fromString(order), orderField);
+        final PageRequest pageable = PageRequest.of(page, pageSize, sort);
+        final Page<DocumentsDataBaseRepository.DocumentsProjection> response = this.service.index(pageable);
+        return ResponseEntity.ok(response);
     }
 }

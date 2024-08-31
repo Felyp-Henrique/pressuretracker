@@ -12,17 +12,17 @@ import com.github.felyphenrique.tracker.application.loggers.entities.Document;
 import com.github.felyphenrique.tracker.kernel.entities.Status;
 
 @Repository()
-public interface DocumentsRepository extends JpaRepository<Document, Integer> {
+public interface DocumentsDataBaseRepository extends JpaRepository<Document, String> {
 
     public Page<DocumentsProjection> findByStatus(@Param("status") Status status, Pageable pageable);
 
     @Modifying()
     @Query(value = "update document d set d.status = :status where d.id = :id", nativeQuery = true)
-    public void updateDocumentSetStatusForId(@Param("id") int id, @Param("status") Status status);
+    public void updateDocumentSetStatusForId(@Param("id") String id, @Param("status") Status status);
 
     public static interface DocumentsProjection {
 
-        public int getId();
+        public String getId();
 
         public String getMessageShort();
 

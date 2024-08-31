@@ -15,6 +15,11 @@ public enum Status {
         return value;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(this.value);
+    }
+
     public final boolean isInactivated() {
         return this.value == INACTIVATED.value;
     }
