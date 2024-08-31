@@ -42,7 +42,7 @@ public class Integration {
     @Column(name = "status")
     private Status status;
 
-    @OneToMany(mappedBy = "documents", orphanRemoval = true, cascade = { CascadeType.REMOVE })
+    @OneToMany(mappedBy = "integration", orphanRemoval = true, cascade = { CascadeType.REMOVE })
     private List<Document> documents;
 
     public Integration() {
