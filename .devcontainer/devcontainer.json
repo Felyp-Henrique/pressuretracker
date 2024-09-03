@@ -1,0 +1,16 @@
+{
+    "features": {
+        "ghcr.io/devcontainers/features/java": {
+            "version": "latest",
+            "installMaven": true,
+            "mavenVersion": "latest"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+
+            ]
+        }
+    }
+}
