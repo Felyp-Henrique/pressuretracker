@@ -1,10 +1,7 @@
 {
     "features": {
-        "ghcr.io/ebaskoro/devcontainer-features/sdkman:1": {
-            "version": "latest"
-        },
         "ghcr.io/devcontainers/features/java": {
-            "version": "17",
+            "version": "22",
             "installMaven": true,
             "mavenVersion": "latest"
         },
