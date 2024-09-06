@@ -1,15 +1,19 @@
 {
     "features": {
         "ghcr.io/devcontainers/features/java": {
-            "version": "latest",
+            "version": "17",
             "installMaven": true,
             "mavenVersion": "latest"
+        },
+        "ghcr.io/devcontainers/features/python": {
+            "version": "3.12"
         }
     },
     "customizations": {
         "vscode": {
             "extensions": [
-
+                "vscjava.vscode-java-pack",
+                "ms-python.python"
             ]
         }
     }
