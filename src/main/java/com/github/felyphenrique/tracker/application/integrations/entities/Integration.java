@@ -38,6 +38,9 @@ public class Integration {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @Column(name = "updated_at", nullable = true)
+    private LocalDateTime updatedAt;
+
     @Enumerated(value = EnumType.ORDINAL)
     @Column(name = "status")
     private Status status;
@@ -50,6 +53,7 @@ public class Integration {
         this.description = "";
         this.token = "";
         this.createdAt = LocalDateTime.now();
+        this.updatedAt = null;
         this.status = Status.INACTIVATED;
         this.documents = Collections.emptyList();
     }
@@ -84,6 +88,14 @@ public class Integration {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public Status getStatus() {
