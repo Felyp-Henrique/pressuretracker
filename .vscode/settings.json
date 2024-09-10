@@ -6,7 +6,7 @@
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-22",
-            "path": "/opt/jdk-22.0.1",
+            "path": "/usr/local/sdkman/candidates/java/current",
             "default": true
         }
     ]
