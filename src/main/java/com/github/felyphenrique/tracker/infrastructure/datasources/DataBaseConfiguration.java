@@ -1,4 +1,4 @@
-package com.github.felyphenrique.tracker.configurations;
+package com.github.felyphenrique.tracker.infrastructure.datasources;
 
 import javax.sql.DataSource;
 
