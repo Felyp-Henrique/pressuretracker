@@ -5,7 +5,8 @@
             "type": "java",
             "name": "Debug Pressure Tracker",
             "request": "launch",
-            "mainClass": "com.github.felyphenrique.tracker.PressureTrackerApplication"
+            "mainClass": "com.github.felyphenrique.tracker.PressureTrackerApplication",
+            "preLaunchTask": "backend.build"
         }
     ]
 }

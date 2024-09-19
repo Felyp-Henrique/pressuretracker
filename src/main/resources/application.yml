@@ -1,5 +1,3 @@
-tracker:
-  version: "v1"
 spring:
   application:
     name: "Pressure Tracker"

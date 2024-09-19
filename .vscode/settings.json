@@ -9,5 +9,17 @@
             "path": "/usr/local/sdkman/candidates/java/current",
             "default": true
         }
-    ]
+    ],
+    "[java]": {
+        "editor.indentSize": 4,
+        "editor.autoIndent": "advanced",
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+    },
+    "[javascript]": {
+        "editor.indentSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.detectIndentation": false,
+        "editor.insertSpaces": true,
+    }
 }

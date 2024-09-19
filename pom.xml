@@ -124,6 +124,27 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>run-shell-command</id>
+						<phase>compile</phase> <!-- Pode ser alterado para outra fase -->
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>bash</executable>
+							<arguments>
+								<argument>-c</argument>
+								<argument>cd web &amp;&amp; npm run build &amp;&amp; cd .. &amp;&amp; cp -r --verbose web/dist/* src/main/resources/static</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
