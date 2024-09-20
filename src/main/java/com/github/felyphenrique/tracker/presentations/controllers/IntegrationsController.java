@@ -13,7 +13,7 @@ import com.github.felyphenrique.tracker.application.dtos.IntegrationIndexRespons
 import com.github.felyphenrique.tracker.application.services.IntegrationsIndexService;
 
 @RestController
-@RequestMapping("/integrations")
+@RequestMapping("/api/integrations")
 public class IntegrationsController {
     private final IntegrationsIndexService integrationsIndexService;
 
