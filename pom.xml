@@ -6,25 +6,28 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.3.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.github.felyphenrique</groupId>
 	<artifactId>tracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Pressure Tracker</name>
 	<description>An easy bug tracker.</description>
-	<url/>
+	<url>https://github.com/Felyp-Henrique/pressuretracker</url>
 	<licenses>
-		<license/>
+		<license>
+			<name></name>
+			<url></url>
+		</license>
 	</licenses>
 	<developers>
-		<developer/>
+		<developer>
+			<name>Felyp Henrique</name>
+			<url>https://github.com/Felyp-Henrique</url>
+		</developer>
 	</developers>
 	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
+		<url>https://github.com/Felyp-Henrique/pressuretracker</url>
 	</scm>
 	<properties>
 		<java.version>22</java.version>
@@ -50,7 +53,6 @@
 			<groupId>org.springframework.restdocs</groupId>
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
@@ -67,7 +69,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -131,7 +132,7 @@
 				<executions>
 					<execution>
 						<id>run-shell-command</id>
-						<phase>compile</phase> <!-- Pode ser alterado para outra fase -->
+						<phase>compile</phase>
 						<goals>
 							<goal>exec</goal>
 						</goals>

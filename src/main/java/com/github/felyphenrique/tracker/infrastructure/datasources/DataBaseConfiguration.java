@@ -25,7 +25,7 @@ public class DataBaseConfiguration {
     @Value("${spring.datasource.password}")
     private String dataSourcePassword;
 
-    @Bean
+    @Bean(name = "trackerDataSource")
     public DataSource dataSource() {
         return DataSourceBuilder.create()
                 .driverClassName("com.mysql.cj.jdbc.Driver")

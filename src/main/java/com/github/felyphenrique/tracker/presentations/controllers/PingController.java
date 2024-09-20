@@ -12,6 +12,6 @@ public class PingController {
 
     @GetMapping
     public @ResponseBody ResponseEntity<String> index() {
-        return ResponseEntity.ok("Ok!");
+        return ResponseEntity.ok("Pong!");
     }
 }

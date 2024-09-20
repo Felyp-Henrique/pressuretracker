@@ -13,5 +13,6 @@ import com.github.felyphenrique.tracker.domain.repositories.IntegrationsReposito
 @Repository
 public interface DataBaseIntegrationsRepository extends IntegrationsRepository, JpaRepository<Integration, Integer> {
 
+    @Override
     public List<Integration> findByStatus(@Param("status") Status status);
 }

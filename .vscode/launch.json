@@ -3,10 +3,16 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug Pressure Tracker",
+            "name": "Debug Fullstack",
             "request": "launch",
             "mainClass": "com.github.felyphenrique.tracker.PressureTrackerApplication",
             "preLaunchTask": "backend.build"
-        }
+        },
+        {
+            "type": "java",
+            "name": "Debug Backend",
+            "request": "launch",
+            "mainClass": "com.github.felyphenrique.tracker.PressureTrackerApplication"
+        },
     ]
 }

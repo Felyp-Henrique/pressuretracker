@@ -14,8 +14,3 @@ spring:
     properties:
       hibernate:
         format_sql: true
-  security:
-    user:
-      name: "${TRACKER_SECURITY_ADMIN_USERNAME:admin}"
-      password: "${TRACKER_SECURITY_ADMIN_PASSWORD:admin}"
-      roles: "${TRACKER_SECURITY_ADMIN_ROLES:admin}"

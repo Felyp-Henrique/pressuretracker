@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 public class Integration {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "integrations_sequence_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "description", length = 180, nullable = false)
