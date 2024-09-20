@@ -16,9 +16,10 @@ public class IntegrationsIndexService {
     private final IntegrationsResponsesMapper integrationsResponsesMapper;
 
     @Autowired
-    public IntegrationsIndexService(IntegrationsService integrationsService, IntegrationsResponsesMapper mapper) {
+    public IntegrationsIndexService(
+            IntegrationsService integrationsService, IntegrationsResponsesMapper integrationsResponsesMapper) {
         this.integrationsService = integrationsService;
-        this.integrationsResponsesMapper = mapper;
+        this.integrationsResponsesMapper = integrationsResponsesMapper;
     }
 
     public List<IntegrationIndexResponse> index() {

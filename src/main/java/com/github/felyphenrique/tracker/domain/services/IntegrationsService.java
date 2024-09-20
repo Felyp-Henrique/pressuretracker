@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.felyphenrique.tracker.domain.entities.Integration;
+import com.github.felyphenrique.tracker.domain.entities.Status;
 import com.github.felyphenrique.tracker.domain.repositories.IntegrationsRepository;
 
 @Service
@@ -18,6 +19,6 @@ public class IntegrationsService {
     }
 
     public final List<Integration> getAllIntegrations() {
-        return this.integrationsRepository.findAll();
+        return this.integrationsRepository.findByStatus(Status.ACTIVE);
     }
 }

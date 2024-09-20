@@ -15,15 +15,15 @@ import com.github.felyphenrique.tracker.application.services.IntegrationsIndexSe
 @RestController
 @RequestMapping("/integrations")
 public class IntegrationsController {
-    private final IntegrationsIndexService service;
+    private final IntegrationsIndexService integrationsIndexService;
 
     @Autowired
-    public IntegrationsController(IntegrationsIndexService service) {
-        this.service = service;
+    public IntegrationsController(IntegrationsIndexService integrationsIndexService) {
+        this.integrationsIndexService = integrationsIndexService;
     }
 
     @GetMapping
     public @ResponseBody ResponseEntity<List<IntegrationIndexResponse>> index() {
-        return ResponseEntity.ok(this.service.index());
+        return ResponseEntity.ok(this.integrationsIndexService.index());
     }
 }

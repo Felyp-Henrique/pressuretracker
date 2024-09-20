@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -29,12 +31,17 @@ public class Integration {
     @Column(name = "updated_at", nullable = true)
     private LocalDateTime updatedAt;
 
+    @Enumerated(value = EnumType.ORDINAL)
+    @Column(name = "status", nullable = false)
+    private Status status;
+
     public Integration() {
         this.id = 0;
         this.description = "";
         this.token = "";
         this.createdAt = LocalDateTime.now();
         this.updatedAt = null;
+        this.status = Status.INACTIVE;
     }
 
     public int getId() {
@@ -75,5 +82,26 @@ public class Integration {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public static Integration createEmpty() {
+        return new Integration();
+    }
+
+    public static Integration createActivated() {
+        final Integration integration = new Integration();
+        final LocalDateTime createdAt = LocalDateTime.now();
+        final Status status = Status.ACTIVE;
+        integration.setCreatedAt(createdAt);
+        integration.setStatus(status);
+        return integration;
     }
 }

@@ -2,7 +2,7 @@ package com.github.felyphenrique.tracker.application.dtos;
 
 import com.github.felyphenrique.tracker.domain.entities.Integration;
 
-public class IntegrationIndexResponse {
+public final class IntegrationIndexResponse {
     private int id;
     private String description;
 
@@ -27,7 +27,14 @@ public class IntegrationIndexResponse {
         this.description = description;
     }
 
-    public static final IntegrationIndexResponse from(final Integration integration) {
+    public Integration toIntegration() {
+        final Integration integration = Integration.createActivated();
+        integration.setId(this.id);
+        integration.setDescription(this.description);
+        return integration;
+    }
+
+    public static IntegrationIndexResponse from(final Integration integration) {
         final IntegrationIndexResponse integrationIndexResponse = new IntegrationIndexResponse();
         integrationIndexResponse.setId(integration.getId());
         integrationIndexResponse.setDescription(integration.getDescription());
