@@ -22,14 +22,15 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf(Customizer.withDefaults());
-        httpSecurity.authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/api/ping").permitAll()
-                .requestMatchers("/panel/**").authenticated()
-                .requestMatchers("/api/**").authenticated()
-                .anyRequest().permitAll());
-        httpSecurity.httpBasic(Customizer.withDefaults());
-        httpSecurity.formLogin(Customizer.withDefaults());
-        return httpSecurity.build();
+        return httpSecurity
+                .csrf(csrf -> Customizer.withDefaults())
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/api/ping").permitAll()
+                        .requestMatchers("/panel/**").authenticated()
+                        .requestMatchers("/api/**").authenticated()
+                        .anyRequest().permitAll())
+                .httpBasic(httpBasic -> Customizer.withDefaults())
+                .formLogin(formLogin -> formLogin.disable())
+                .build();
     }
 }

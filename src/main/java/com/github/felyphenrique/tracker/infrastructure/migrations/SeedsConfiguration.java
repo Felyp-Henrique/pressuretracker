@@ -31,7 +31,7 @@ public class SeedsConfiguration {
         userAdmin.setUsername("admin");
         userAdmin.setPassword("$2y$10$WTpImslLykp4QzXANA.XY.ebFR1FpcYli/SIt9khL1SIY.v2kE5Ha");
         userAdmin.setRoles(roles);
-        if (!this.usersRepository.existsById(userAdmin.getId())) {
+        if (!this.usersRepository.exists(userAdmin)) {
             this.usersRepository.create(userAdmin);
         }
     }

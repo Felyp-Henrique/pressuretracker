@@ -1,8 +1,11 @@
 {
     "files.trimTrailingWhitespace": true,
     "files.autoSave": "afterDelay",
-    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.autobuild.enabled": true,
     "java.compile.nullAnalysis.mode": "automatic",
+    "java.server.launchMode": "Standard",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.configuration.detectJdksAtStart": true,
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-22",

@@ -14,7 +14,17 @@ public interface DataBaseUsersRepository extends UsersRepository, JpaRepository<
     public User findByUsername(@Param("username") String username);
 
     @Override
-    default public User create(User user) {
+    public default User create(User user) {
         return this.save(user);
+    }
+
+    @Override
+    public default User update(User user) {
+        return this.save(user);
+    }
+
+    @Override
+    public default boolean exists(User user) {
+        return this.existsById(user.getId());
     }
 }
